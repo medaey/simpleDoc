@@ -1,0 +1,6 @@
+title: Documentation
+description: Site de documentation interne
+theme: just-the-docs
+
+aux_links:
+  Template Repository: https://github.com/just-the-docs/just-the-docs-template
