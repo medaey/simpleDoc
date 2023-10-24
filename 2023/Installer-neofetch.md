@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Installer-neofetch
-parent: Medaey
+parent: 2023
 ---
 
 Neofetch est un outils d'information système multiplateforme en ligne de commande, il recueille les informations de votre système et les affiche sur le terminal.![](https://1.bp.blogspot.com/-LsLBU7ZfnVY/YLVqrWqUvdI/AAAAAAAAE9Y/45iL1VcIg8w3GbAg-eRK6x9n3iI3mCotACNcBGAsYHQ/s16000/neofetch.webp?format=webp)
