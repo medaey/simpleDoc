@@ -1,3 +1,60 @@
+# Install on alpinelinux
+
+
+```ash
+# Update repo and install packages
+apk add --update \
+git \
+lighttpd \
+jekyll \
+ruby-dev \
+alpine-sdk \
+linux-headers &&\
+rm -rf /var/cache/apk/* && \
+# Auto-start lighttpd
+rc-update add lighttpd && \
+rc-service lighttpd restart && \
+# Install jekyll
+gem install bundler jekyll && \
+gem update && \
+git clone https://github.com/medaey/simpleDoc.git /var/www/localhost/_sources && \
+cd /var/www/localhost/_sources && \
+gem install bundler jekyll && \
+bundle install && \
+jekyll serve --sourc "/var/www/localhost/_sources" --destination "/var/www/localhost/htdocs" --host 0.0.0.0 watch
+```
+
+## make open-rc service
+```ash
+vi /etc/init.d/jekyll
+```
+```jekyll
+#!/sbin/openrc-run
+
+description="Jekyll Service"
+command_background="yes"
+pidfile="/var/run/jekyll.pid"
+command="/usr/bin/jekyll"
+command_args="serve --sourc '/var/www/localhost/_sources' --destination '/var/www/localhost/htdocs' --host 0.0.0.0 watch"
+output_log="/dev/null"
+error_log="/dev/null"
+
+depend() {
+  need localmount
+  use net
+}
+
+start_pre() {
+  checkpath --directory $output_log
+  checkpath --directory $error_log
+}
+```
+```ash
+chmod +x /etc/init.d/jekyll
+rc-update add jekyll
+rc-service jekyll restart
+```
+
 # just-the-docs-template
 
 This is a *bare-minimum* template to create a [Jekyll] site that:
