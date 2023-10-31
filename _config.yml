@@ -1,6 +1,9 @@
 title: Documentation
-description: Site de documentation interne
+description: Site de documentation informatique
 theme: just-the-docs
 
+
+# Aux links for the upper right navigation
 aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+  "simpleDoc sur GitHub":
+    - "https://github.com/medaey/simpleDoc/admindoc.github.io"

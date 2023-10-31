@@ -1,7 +1,8 @@
 ---
 layout: post
-title: Cette copie de Windows n'est pas authentique
-parent: 2022
+title: Cette copie n'est pas authentique
+parent: windows-client
+grand_parent: system
 ---
 
 Vous avez cette erreur alors que vous posséder une version originale de Windows?  

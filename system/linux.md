@@ -1,5 +1,6 @@
 ---
 layout: default
-title: 2023
+title: linux
 has_children: true
+parent: system
 ---
